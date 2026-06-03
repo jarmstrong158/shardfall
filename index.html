@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>SHARDFALL</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game"></canvas>
+
+    <!-- HUD overlay -->
+    <div id="hud" class="hidden">
+      <div id="topbar">
+        <div class="stat"><span class="label">STASH</span><span id="bank" class="big">0</span></div>
+        <div class="stat"><span class="label">DAMAGE</span><span id="rate">0</span></div>
+        <div class="stat"><span class="label">COLLECT</span><span id="coll">0</span></div>
+        <div class="stat"><span class="label">RECLAIM</span><span id="recl">0</span></div>
+        <div class="stat"><span class="label">PILE</span><span id="pile">0</span></div>
+        <div class="stat"><span class="label">TIER</span><span id="tier">Surface</span></div>
+        <div class="stat"><span class="label">MOTES</span><span id="motes">2 idle</span></div>
+        <div class="stat"><span class="label">REFINE</span><span id="mult">x1</span></div>
+        <div class="stat"><span class="label">ASC</span><span id="asc">0</span></div>
+        <div class="spacer"></div>
+        <button id="muteBtn" class="iconbtn" title="Mute / unmute">♪</button>
+      </div>
+
+      <div id="shop">
+        <div class="shop-title">UPGRADES</div>
+        <div id="shopList"></div>
+      </div>
+
+      <div id="ground-progress">
+        <div class="label">ROCK DEPTH</div>
+        <div class="bar"><div id="layerBar" class="fill"></div></div>
+        <div id="layerHint"></div>
+      </div>
+
+      <div id="toast"></div>
+    </div>
+
+    <!-- Title screen -->
+    <div id="title" class="screen">
+      <h1>SHARD<br>FALL</h1>
+      <p class="sub">a tiny idle</p>
+      <p class="blurb">Motes slam the rock; shards fall into a pile partway to the stash.
+        Pile too tall and the rock claws it back — so runners haul it in and mountaineers stomp it flat.
+        Balance <b>damage</b> against <b>collection</b>, crack the rock deeper, and ascend.</p>
+      <button id="startBtn" class="bigbtn">BEGIN</button>
+      <button id="resetBtn" class="textbtn">erase save</button>
+      <p class="hint">Click the rock to slam • click the pile to shove shards into the stash • number keys buy</p>
+    </div>
+
+    <!-- Ascension / win screen -->
+    <div id="winscreen" class="screen hidden">
+      <h1 id="winTitle">THE MOTES ASCEND</h1>
+      <p id="winBody" class="blurb"></p>
+      <button id="ascendBtn" class="bigbtn">ASCEND</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
